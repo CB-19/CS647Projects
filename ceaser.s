@@ -148,15 +148,15 @@
                         jmp Loop
                         
                 PrintResult:
-			pushl $len_cipher_prompt
-			pushl $cipher_prompt
-			call Print
-			addl $8, %esp
+			pushl $len_cipher_prompt	#push ciphertext prompt length to stack
+			pushl $cipher_prompt		#push ciphertext prompt to stack
+			call Print			#call print
+			addl $8, %esp			#after print finishes, the program returns here and adds 8 to ESP
 			
-			pushl $len_msg_pla
-			pushl $msg_pla
-			call Print
-			addl $8, %esp
+			pushl $len_msg_pla		#push ciphertext length to stack
+			pushl $msg_pla			#push ciphertext to stack
+			call Print			#call print
+			addl $8, %esp			#after print finishes, the program returns here and adds 8 to ESP
 
 			call Exit
 
